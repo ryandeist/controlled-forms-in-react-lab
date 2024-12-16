@@ -1,6 +1,12 @@
 import { useState } from 'react';
 
 const Bookshelf = () => {
+    const [books, setBooks] = useState([]);
+    const [newBook, setNewBook] = useState({
+        title: '',
+        author: '',
+    });
+
     return (
     <div className="bookshelfDiv">
         <div className="formDiv">
