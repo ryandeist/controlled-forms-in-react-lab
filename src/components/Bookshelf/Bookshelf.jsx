@@ -54,7 +54,9 @@ const Bookshelf = () => {
                 </form>
             </div>
             <div className="bookCardsDiv">
-                {/* Book cards will display here */}
+                {books.map((book, index) => (
+                    <div className='bookCard' key={index}> <h4>{book.title}</h4> by {book.author}</div>
+                ))}
             </div>
         </div>
     )
