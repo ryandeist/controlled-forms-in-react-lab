@@ -7,6 +7,8 @@ const Bookshelf = () => {
         author: '',
     });
 
+    const bookHasMissingData = !Object.values(newBook).every(Boolean);
+
     const handleFormChange = (event) => {
         setNewBook({ ...newBook, [event.target.name]: event.target.value });
     };
@@ -20,8 +22,9 @@ const Bookshelf = () => {
         });
     };
 
-    console.log(newBook)
-    console.log(books)
+    // console.log(Object.values(newBook))
+    // console.log(newBook)
+    // console.log(books)
 
     return (
         <div className="bookshelfDiv">
@@ -47,7 +50,7 @@ const Bookshelf = () => {
                         />
                     </div>
                     <div>
-                        <button type='submit'>
+                        <button type='submit' disabled={bookHasMissingData}>
                             Submit Book
                         </button>
                     </div>
